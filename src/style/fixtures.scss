@@ -4,7 +4,10 @@
     font-weight: normal;
     letter-spacing: 1px;
     padding-left: 12px;
-    margin-top: 0;
+    
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
 .fixtures-table {
