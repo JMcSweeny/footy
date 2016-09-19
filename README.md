@@ -8,8 +8,9 @@ http://footy.jamesmcsweeny.com
 ##Local Development
 
 1. `npm install`
-2. `npm start`  
-3. Your site will run at http://localhost:8080
+2. `typings install`
+3. `npm start`  
+4. Your site will run at http://localhost:8080
 
 ##Production Build
 
