@@ -1,5 +1,6 @@
 node_modules
 dist
+typings
 
 .DS_Store*
 ehthumbs.db
