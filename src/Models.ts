@@ -48,9 +48,7 @@ export interface LeagueByYear {
 }
 
 export interface IComponent {
-    preRender(): Promise<void>;
-    render(): Promise<string>;
-    postRender(): Promise<void>;
+    render(): Promise<void>;
 }
 
 export interface Props {
@@ -69,21 +67,29 @@ export interface UrlParts {
 
 export class Component implements IComponent {
     protected props: Props;
+    protected element: HTMLElement;
 
-    constructor(props: Props) {
+    constructor(props: Props, element: HTMLElement) {
         this.props = props;
+        this.element = element;
     }
     
-    async preRender(): Promise<void> {
+    protected async preRender(): Promise<void> {
         return;
     }
 
-    async render(): Promise<string> {
+    protected async renderHtml(): Promise<string> {
         return '';
     }
 
-    async postRender(): Promise<void> {
+    protected async postRender(): Promise<void> {
         return;
+    }
+
+    async render(): Promise<void> {
+        await this.preRender();
+        this.element.innerHTML = await this.renderHtml();
+        await this.postRender();
     }
 
     getPrettyDate(matchDate: string): string {

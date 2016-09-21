@@ -35,13 +35,9 @@ class Router {
     }
 
     async renderComponent(component: typeof Models.Component, element: HTMLElement, props: Models.Props): Promise<void> {
-        let comp = new component(props);
+        let comp = new component(props, element);
 
-        await comp.preRender();
-
-        element.innerHTML = await comp.render();
-
-        await comp.postRender();
+        await comp.render();
     }
 
     private async renderRoute(path: string, props: Models.Props): Promise<void> {

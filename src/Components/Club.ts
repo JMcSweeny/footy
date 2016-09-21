@@ -10,18 +10,18 @@ export default class Fixtures extends Models.Component {
     private key: string;
     private club: Models.Club;
 
-    constructor(props: ClubProps) {
-        super(props);
+    constructor(props: ClubProps, element: HTMLElement) {
+        super(props, element);
 
         this.key = props.name;
     }
 
-    async preRender(): Promise<void> {
+    protected async preRender(): Promise<void> {
         this.league = await Store.loadLeague();
         this.club = this.league.clubs.find(c => c.key == this.key);
     }
 
-    async render(): Promise<string> {
+    protected async renderHtml(): Promise<string> {
         if(!this.club) {
             return `<div>Club did not compete in the ${this.league.year} ${this.league.league.name}`;
         }

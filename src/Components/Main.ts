@@ -6,16 +6,16 @@ export default class Main extends Models.Component {
     private leagues: Models.League[];
     private years: string[];
 
-    constructor(props: Models.Props) {
-        super(props);
+    constructor(props: Models.Props, element: HTMLElement) {
+        super(props, element);
     }
 
-    async preRender(): Promise<void> {
+    protected async preRender(): Promise<void> {
         this.leagues = Store.leagues;
         this.years = Store.years;
     }
 
-    async render(): Promise<string> {
+    protected async renderHtml(): Promise<string> {
         return `
             <header>
                 <div class="content">
@@ -38,7 +38,7 @@ export default class Main extends Models.Component {
         `;
     }
 
-    async postRender(): Promise<void> {
+    protected async postRender(): Promise<void> {
         let leaguesSelect = document.getElementById('leagues') as HTMLSelectElement;
 
         leaguesSelect.addEventListener('change', async (event) => {

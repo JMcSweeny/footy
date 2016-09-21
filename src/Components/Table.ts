@@ -4,15 +4,15 @@ import Store from '../Store';
 export default class Table extends Models.Component {
     private league: Models.LeagueByYear;
 
-    constructor(props: Models.Props) {
-        super(props);
+    constructor(props: Models.Props, element: HTMLElement) {
+        super(props, element);
     }
 
-    async preRender(): Promise<void> {
+    protected async preRender(): Promise<void> {
         this.league = await Store.loadLeague();
     }
 
-    async render(): Promise<string> {
+    protected async renderHtml(): Promise<string> {
         return `
             <table class="league-table">
                 <thead>
@@ -36,7 +36,7 @@ export default class Table extends Models.Component {
         `;
     }
 
-    async postRender(): Promise<void> {
+    protected async postRender(): Promise<void> {
         let table = document.querySelector('.league-table');
         let rows = table.querySelectorAll('tbody tr');
 

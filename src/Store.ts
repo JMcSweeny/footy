@@ -67,7 +67,7 @@ class Store {
 
         let leagueByYear = this.findLeagueByYear(league, year);
 
-        if(leagueByYear !== null) {
+        if(leagueByYear != null) {
             return leagueByYear;
         }
 

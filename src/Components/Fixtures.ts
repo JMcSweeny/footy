@@ -4,15 +4,15 @@ import Store from '../Store';
 export default class Fixtures extends Models.Component {
     private league: Models.LeagueByYear;
 
-    constructor(props: Models.Props) {
-        super(props);
+    constructor(props: Models.Props, element: HTMLElement) {
+        super(props, element);
     }
 
-    async preRender(): Promise<void> {
+    protected async preRender(): Promise<void> {
         this.league = await Store.loadLeague();
     }
 
-    async render(): Promise<string> {
+    protected async renderHtml(): Promise<string> {
         return this.renderFixtures(this.league.fixtures);
     }
 
