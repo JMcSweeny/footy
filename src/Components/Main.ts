@@ -97,6 +97,6 @@ export default class Main extends Models.Component {
 
         let logo = header.querySelector('.logo') as HTMLImageElement;
 
-        logo.src = require('../img/' + league.key + '.png');
+        logo.src = <string>require('../img/' + league.key + '.png');
     }
 }
