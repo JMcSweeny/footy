@@ -34,7 +34,7 @@ export default class Main extends Models.Component {
                     </div>
                 </div>
             </header>
-            <view></view>
+            <content></content>
         `;
     }
 

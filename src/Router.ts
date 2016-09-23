@@ -41,7 +41,7 @@ class Router {
     }
 
     private async renderRoute(path: string, props: Models.Props): Promise<void> {
-        this.routeElement = this.rootElement.querySelector('view') as HTMLElement;
+        this.routeElement = this.rootElement.querySelector('content') as HTMLElement;
 
         if(!this.rootElement) {
             return;
