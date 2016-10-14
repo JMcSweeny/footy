@@ -108,7 +108,10 @@ class Router {
         for(let param of params.split('&')) {
             let parts = param.split('=');
 
-            props[parts[0]] = parts[1];
+            let key = parts[0];
+            let value = parts[1];
+
+            props[key] = value;
         }
 
         return props;
