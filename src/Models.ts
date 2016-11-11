@@ -1,4 +1,3 @@
-
 export interface League {
     name: string,
     key: string

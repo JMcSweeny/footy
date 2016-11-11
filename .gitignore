@@ -1,6 +1,7 @@
 node_modules
 dist
 typings
+.vscode
 
 .DS_Store*
 ehthumbs.db

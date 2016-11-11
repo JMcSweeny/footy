@@ -110,13 +110,10 @@ class Store {
     }
 
     private findLeagueByYear(league: Models.League, year: string) {
-        for(let leagueByYear of this.leaguesByYear) {
-            if(leagueByYear.year == year && leagueByYear.league == league) {
-                return leagueByYear;
-            }
-        }
-
-        return null;
+        return this.leaguesByYear.find(leagueByYear => 
+            leagueByYear.year == year &&
+            leagueByYear.league == league
+        );
     }
 
     private generateTable(clubs: Models.Club[], matches: Models.Match[]): Models.Table {
