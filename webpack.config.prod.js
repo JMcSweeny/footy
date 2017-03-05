@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
   entry: [
-	    './src/app.ts'
+    './src/app.ts'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -12,27 +12,27 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
-		new webpack.optimize.UglifyJsPlugin({
-	  		compress: {
-				  warnings: false
-	  		}
-		}),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
     new webpack.DefinePlugin({
-        "process.env": {
-            NODE_ENV: JSON.stringify("production")
-        }
-  })
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
+    })
   ],
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
   },
   module: {
     loaders: [
-      { 
-        test: /\.ts?$/, 
-        loader: 'babel-loader!ts-loader' ,
+      {
+        test: /\.ts?$/,
+        loader: 'ts-loader',
         exclude: /node_modules/
       },
       {

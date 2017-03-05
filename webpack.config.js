@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
   devtool: '#cheap-module-eval-source-map',
   entry: [
-	    './src/app.ts'
+    './src/app.ts'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -16,9 +16,9 @@ module.exports = {
   },
   module: {
     loaders: [
-      { 
-        test: /\.ts?$/, 
-        loader: 'ts-loader' ,
+      {
+        test: /\.ts?$/,
+        loader: 'ts-loader',
         exclude: /node_modules/
       },
       {

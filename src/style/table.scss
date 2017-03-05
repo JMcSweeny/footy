@@ -1,63 +1,64 @@
 .league-table {
-    width: 100%;
-    overflow: hidden;
-    
-    th, 
-    td {
-        width: 10px;
-        padding: 5px 0;
+  width: 100%;
+  overflow: hidden;
+  
+  th, 
+  td {
+    width: 10px;
+    padding: 5px 0;
+  }
+
+  th {
+    color: #777;
+    font-weight: normal;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  tbody {
+    tr {
+      border-top: 1px #eee solid;
+
+      &.champ {
+        background-color: #d3fce8;
+      }
+
+      &.rel {
+        background-color: #f6babd;
+      }
     }
+  }
 
-    th {
-        color: #777;
-        font-weight: normal;
-    }
+  .club {
+    width: 50px;
+    text-align: left;
+  }
 
-    td {
-        text-align: center;
-    }
-
-    tbody {
-        tr {
-            border-top: 1px #eee solid;
-
-            &.champ {
-                background-color: #d3fce8;
-            }
-
-            &.rel {
-                background-color: #f6babd;
-            }
-        }
-    }
-
-    .club {
-        width: 50px;
-        text-align: left;
-    }
-
-    .points {
-        font-weight: bold;
-    }
+  .points {
+    font-weight: bold;
+  }
 }
 
 @media only screen 
-    and (max-device-width: 768px) 
-    and (-webkit-min-device-pixel-ratio: 2) {
-      .league-table {
-          th,
-          td {
-              width: 7px;
-          }
+  and (max-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
 
-          .club {
-              width: 35px;
-          }
+  .league-table {
+    th,
+    td {
+      width: 7px;
+    }
 
-          .played,
-          .goals-for,
-          .goals-against {
-              display: none;
-          }
-      }
+    .club {
+      width: 35px;
+    }
+
+    .played,
+    .goals-for,
+    .goals-against {
+      display: none;
+    }
+  }
 }

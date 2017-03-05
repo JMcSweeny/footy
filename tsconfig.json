@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "es2015.promise", "es5"],
+    "lib": [
+      "dom",
+      "es2015.promise",
+      "es5"
+    ],
     "sourceMap": true
   },
   "exclude": [

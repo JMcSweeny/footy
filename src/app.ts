@@ -6,26 +6,26 @@ import Router from './Router';
 import './style/main.scss';
 
 async function render() {
-    let root = document.getElementById('root');
+  let root = document.getElementById('root');
 
-    let routes = [
-        {
-            path: 'table',
-            component: Table
-        },
-        {
-            path: 'fixtures',
-            component: Fixtures
-        },
-        {
-            path: 'club',
-            component: Club
-        }
-    ];
+  let routes = [
+    {
+      path: 'table',
+      component: Table
+    },
+    {
+      path: 'fixtures',
+      component: Fixtures
+    },
+    {
+      path: 'club',
+      component: Club
+    }
+  ];
 
-    await Router.start(Main, root, routes);
+  await Router.start(Main, root, routes);
 
-    await Router.go('table', {});
+  await Router.go('table', {});
 }
 
 render();
